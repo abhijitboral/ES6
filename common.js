@@ -48,7 +48,6 @@
 
     // Default Parameters in arrow function
 
-
     const myFunc = (a,b=20) => {
         return a + b;
     }
@@ -87,6 +86,80 @@ console.log(arr1);
 let arr1 = [1,2,3];
 let arr2 = [...arr1,4,5,6];
 console.log(arr2);
+
+// shadowed variable
+let x  = 0 // shadowed variable
+{
+  let x = 1;
+  console.log(x)
+}
+
+//Hoisting
+let name = 'john';
+
+sayHi() // valid
+
+function sayHi(){
+  let greet = "hi"
+  console.log(name)
+}
+
+sayHi(); // ❌ TypeError: sayHi is not a function
+
+var sayHi = function () {
+  console.log("Hi!");
+};
+
+Only the variable sayHi is hoisted (with undefined), not the actual function.
+
+
+//Temporal Dead Zone
+// Temporal Dead Zone (TDZ) is the time between the start of a block and the point where a variable is declared.
+// TDZ starts here
+let x = 10;
+// TDZ ends here
+
+Var no TDZ
+
+console.log(city); // ❌ ReferenceError
+const city = "London"; // let city = "London";
+
+
+//Closure
+A closure gives you access to an outer function’s variables from an inner function — even after the outer function has returned.
+function outer() {
+  let counter = 0;
+
+  return function inner() {
+    counter++;
+    console.log(counter);
+  };
+}
+
+const increment = outer();  // outer() is called, and inner() is returned
+
+increment();  // 1
+increment();  // 2
+increment();  // 3
+
+
+// IIFE (Immediately Invoked Function Expression)
+Is defined and executed immediately after it's created.Runs once and does not pollute the global scope.
+// Example of IIFE
+(function() {
+	console.log("This is an IIFE");
+})();
+
+
+Currying
+// Currying is a functional programming technique where a function with multiple arguments is transformed into a sequence of functions, each taking a single argument.
+// This allows for partial application of functions, making them more flexible and reusable.
+// Example of Currying
+function add(a) {
+	return function(b) {
+		return a + b;
+	};
+}
 
 */
 
