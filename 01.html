@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <script>
+            function FnGuess(){
+                let guess_num = document.getElementById('guess_number').value;
+                let flag = '';
+                const blackbox = [105, 56, 78, 87, 90];
+                /* for (let i = 0; i < blackbox.length; i++) {
+                    if(blackbox[i] == guess_num){
+                        flag = true;
+                        break;
+                    }else{
+                        flag = false;
+                    }
+                } */
+                for(let bb of blackbox){
+                    if(bb == guess_num){
+                        flag = true;
+                        break; 
+                    }else{
+                        flag = false;
+                    }
+                }
+                if(flag){
+                    alert('You Wins');
+                }else{
+                    alert('You Lost');
+                }
+            }
+            
+        </script>
+        <script type="module" src="./common.js"></script>
+    </head>
+    <body>
+        <h1>Js Class</h1>
+        <h1>
+          Guess the number: <input type="number" id="guess_number"/>
+          <input type="button" name="guess_button" value="Guess Button" onclick="FnGuess();"/>
+        </h1>
+    </body>
+</html>
