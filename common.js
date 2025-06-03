@@ -100,7 +100,6 @@ let name = 'john';
 sayHi() // valid
 
 function sayHi(){
-  let greet = "hi"
   console.log(name)
 }
 

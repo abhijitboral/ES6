@@ -10,7 +10,7 @@ function Parent_function(){
 
 // create a prototype method of Parent_function
 Parent_function.prototype.main_func = function(){
-    console.log("Sayan");
+    console.log("Sayandeep Nayak");
 }
 // create a constructor method
 function GetData(){
